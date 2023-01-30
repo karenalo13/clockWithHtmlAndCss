@@ -1,0 +1,10 @@
+// @for $i from 1 through 11 {
+//     .numbers:nth-child(#{$i}) {
+//         transform: rotate(calc(calc(#{$i}) * var(--rotation)));
+      
+//     }
+//     .numbers:nth-child(#{$i}) span {
+//         transform: rotate(calc(calc((-1)*#{$i}) * var(--rotation)));
+//       }
+//   }
+// merge dar e mult mai frumos in js

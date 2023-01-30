@@ -1,0 +1,145 @@
+:root{
+    --rotation: 30deg;
+    --start-minute-deg:0deg;
+    --end-minute-deg:360deg;
+    --start-hour-deg:0deg;
+    --end-hour-deg:360deg;
+}
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: blueviolet;
+    font-family: "Josefin Sans", sans-serif;
+    float: left;
+  }
+    #clock {
+    width: 280px;
+    height: 280px;
+    background: #25283d;
+    border: 18px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top:calc(50% - 280px);
+    left:calc(50% - 280px);
+  }
+
+  #clock:before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    left: -18px;
+    top: -10px;
+    border: 18px solid #aa2626;
+    border-radius: 50%;
+    z-index: -2;
+  }
+
+  #clock:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 0, 0, 0.9);
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - 9px);
+    top: calc(50% - 9px);
+    box-shadow: 0 2px 4px #00000026;
+  }
+  li {
+    list-style-type: none;
+  }
+
+  .numbers {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+    text-align: center;
+  }
+  .numbers span {
+    display: block;
+    color: #dbe7fd;
+    font-size: 38px;
+    text-shadow: 0 5px 18px #00000026, 0 2px 3px #00000033;
+  }
+
+  @keyframes sec {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes sec1 {
+    from {
+      transform: rotate(var(--start-minute-deg));
+    }
+    to {
+      transform: rotate(var(--end-minute-deg));
+    }
+  }
+
+ 
+
+  #second {
+    animation: sec 60s steps(60, end) infinite;
+    position:absolute;
+    background: red;
+    border-radius: 2px;
+    width: 4px;
+    height: 90px;
+    top: 50px;
+    left: calc(50% - 1px);
+    box-shadow: 1px 2px 3px #00000026;
+    transform-origin: 50% 100%;
+  }
+
+  @keyframes sec1 {
+    from {
+      transform: rotate(var(--start-minute-deg));
+    }
+    to {
+      transform: rotate(var(--end-minute-deg));
+    }
+  }
+
+  #minute {
+    transform: rotate(var(--start-minute-deg));
+    animation: sec1 3600s steps(60, end) infinite;
+    width: 8px;
+    height: 79px;
+    border-radius: 4px;
+    background: gray;
+    position: absolute;
+    left: calc(49% + 0px);
+    top: 22%;
+    box-shadow: -1px 0 5px #00000026;
+    transform-origin: 50% 100%;
+  }
+
+  @keyframes sec2 {
+    from {
+      transform: rotate(var(--start-hour-deg));
+    }
+    to {
+      transform: rotate(var(--end-hour-deg));
+    }
+  }
+  /* 216000s */
+  #hour {
+    transform: rotate(var(--start-hour-deg));
+    animation: sec2 216000s steps(3600, end) infinite;
+    width: 12px;
+    height: 65px;
+    border-radius: 6px;
+    background: orange;
+    position: absolute;
+    left: calc(50% - 4px);
+    top: 27%;
+    transform-origin: 50% 100%;
+    box-shadow: 1px 0 4px #00000026;
+  }
