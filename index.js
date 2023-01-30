@@ -41,7 +41,7 @@ window.onload = function () {
   document.documentElement.style.setProperty(
     "--start-minute-deg",
     `${startMinutesDeg}`
-  );
+  ); 
   document.documentElement.style.setProperty(
     "--end-minute-deg",
     `${endMinutesDeg}`
