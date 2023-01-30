@@ -143,3 +143,9 @@
     transform-origin: 50% 100%;
     box-shadow: 1px 0 4px #00000026;
   }
+  @media  (max-width: 600px){
+    #clock{
+      margin-left: 120px;
+    }
+  }
+  
